@@ -272,6 +272,7 @@ plot.strata_doctopic <- function(x, show_topic = NULL, var_name = NULL, by = c("
   tables$TopicId <- purrr::map_int(1:length(tables$Topic), function(x) {as.integer(splitted[[x]][positions[x]+1])})
   tables$TopicId <- tables$TopicId + sum(!grepl("Other_", tnames)) * grepl("Other_", tnames)
   tables$Topic <- factor(tables$Topic, levels = tnames[tables$TopicId[1:length(tnames)]])
+  tables <- tables %>% dplyr::filter(.data$TopicID %in% show_topic)
 
   variables <- unique(tables$label)
 
