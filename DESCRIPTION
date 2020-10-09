@@ -10,7 +10,8 @@ Authors@R: c(person("Shusei", "Eshima", email = "shuseieshima@g.harvard.edu", ro
     person(given = "Romain", family = "François", role = "ctb", comment = c(ORCID = "0000-0002-2444-4226")))
 License: GPL-3
 Depends: R (>= 3.6)
-Imports: Rcpp,
+Imports:
+  BayesLogit,
   dplyr (>= 1.0.0),
   fastmap,
   future.apply,
@@ -20,9 +21,9 @@ Imports: Rcpp,
   Matrix,
   matrixNormal,
   MASS,
-  pgdraw,
   purrr,
   quanteda (>= 2.0.0),
+  Rcpp,
   rlang,
   stats,
   stringr,

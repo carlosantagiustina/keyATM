@@ -120,8 +120,8 @@ multiPG_sample_Phi <- function(Phi, Y, D, K, M, mu_phi, Sigma_phi)
 
 rpg <- function(b, c)
 { # Draw from Polya-Gamma
-  if (b %% 1 == 0 & (b < 20 | c == 0)) {
-    return(pgdraw::pgdraw(b, c))
+  if (b < 15 | c == 0) {
+    return(BayesLogit::rpg(num = 1, h = b, z = c))
   } else {
     # based on Glynn et al. (2019), https://github.com/G-Lynn/DLTM/blob/master/Cpp/rpgApprox.cpp
     E_omega <- 1/(2*c) * tanh(c/2)
